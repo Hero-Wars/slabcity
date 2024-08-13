@@ -24,9 +24,9 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Emanuel Stinkt test
-        // Christoph auch.
-        // Glückwunsch jetzt gegts
+
+        new MainZ(this);
+        new MainC(this);
 
         plugin = this;
 
