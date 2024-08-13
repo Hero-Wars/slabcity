@@ -24,6 +24,8 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Emanuel Stinkt
+
         plugin = this;
 
         if (user.loadDefault()){
