@@ -7,6 +7,9 @@ import de.zombyxl.slabcityrp.utils.ConfigurationBuilder;
 import de.zombyxl.slabcityrp.utils.NPCListener;
 import de.zombyxl.slabcityrp.utils.NPCManager;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Villager;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -24,6 +27,15 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        for (Entity entity : Bukkit.getWorlds().get(0).getEntities()) {
+            if (entity.getType() == EntityType.VILLAGER) {
+                Villager villager = (Villager) entity;
+                if ("Klaus".equals(villager.getCustomName())) {
+                    villager.remove();
+                }
+            }
+        }
 
         new MainZ(this);
         new MainC(this);
