@@ -24,7 +24,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Emanuel Stinkt
+        // Emanuel Stinkt test
 
         plugin = this;
 
