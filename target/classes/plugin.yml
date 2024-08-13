@@ -1,0 +1,6 @@
+name: SlabCity-RP
+version: '1.0'
+main: de.zombyxl.slabcityrp.Main
+api-version: '1.21'
+author: ZombyXL
+description: SlabCity-RP Plugin

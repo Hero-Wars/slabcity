@@ -1,0 +1,10 @@
+de\zombyxl\slabcityrp\events\RegisterNPCListener.class
+de\zombyxl\slabcityrp\utils\ItemBuilder.class
+de\zombyxl\slabcityrp\utils\NPCListener.class
+de\zombyxl\slabcityrp\Main.class
+de\zombyxl\slabcityrp\utils\NPCManager.class
+de\zombyxl\slabcityrp\utils\Utils.class
+de\zombyxl\slabcityrp\events\RegisterEvent.class
+de\zombyxl\slabcityrp\utils\ConfigurationBuilder.class
+de\zombyxl\slabcityrp\systems\housing\listener\HousingListener.class
+de\zombyxl\slabcityrp\utils\ChatClickBuilder.class
