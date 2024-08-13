@@ -26,6 +26,7 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         // Emanuel Stinkt test
         // Christoph auch.
+        // Glückwunsch jetzt gegts
 
         plugin = this;
 
