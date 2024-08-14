@@ -19,6 +19,9 @@ public class RegisterEvent implements Listener {
             user.set(player.getUniqueId()+".uuid", player.getUniqueId().toString());
             user.set(player.getUniqueId()+".displayname", player.getDisplayName());
             user.set(player.getUniqueId()+".register", "false");
+            user.set(player.getUniqueId()+".ausweis", "false");
+            user.set(player.getUniqueId()+".driverl", "false");
+            user.set(player.getUniqueId()+".waffenl", "false");
             user.save();
             player.teleport(flugzeug);
             player.sendMessage(prefix + "§7Willkommen in §6SlabCityRP§7!");

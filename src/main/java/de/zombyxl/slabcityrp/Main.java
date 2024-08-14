@@ -28,14 +28,6 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        for (Entity entity : Bukkit.getWorlds().get(0).getEntities()) {
-            if (entity.getType() == EntityType.VILLAGER) {
-                Villager villager = (Villager) entity;
-                if ("Klaus".equals(villager.getCustomName())) {
-                    villager.remove();
-                }
-            }
-        }
 
         new MainZ(this);
         new MainC(this);
@@ -55,7 +47,6 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new HousingListener(), this);
 
 
-        NPCManager.createNPC(registeramt, "Klaus");
     }
 
     @Override

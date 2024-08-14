@@ -1,10 +1,13 @@
 package de.zombyxl.slabcityrp;
 
+import de.zombyxl.slabcityrp.events.PlayerInvListener;
 import de.zombyxl.slabcityrp.systems.bank.commands.AtmCommand;
 import de.zombyxl.slabcityrp.systems.bank.commands.MoneyCommand;
+import de.zombyxl.slabcityrp.utils.NPCManager;
 import org.bukkit.Bukkit;
-import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.inventory.Inventory;
+
+import static de.zombyxl.slabcityrp.utils.Utils.bank;
+import static de.zombyxl.slabcityrp.utils.Utils.registeramt;
 
 public class MainZ {
 
@@ -15,12 +18,17 @@ public class MainZ {
         onEnable();
     }
 
-    public static Inventory atm = Bukkit.createInventory(null, InventoryType.HOPPER, "§6§lATM");
 
     public void onEnable() {
 
+
+        NPCManager.createNPC(registeramt, "Klaus");
+        NPCManager.createNPC(bank, "Dario");
+
         plugin.getCommand("money").setExecutor(new MoneyCommand(plugin));
         plugin.getCommand("atm").setExecutor(new AtmCommand(plugin));
+
+        Bukkit.getPluginManager().registerEvents(new PlayerInvListener(plugin), plugin);
 
     }
 

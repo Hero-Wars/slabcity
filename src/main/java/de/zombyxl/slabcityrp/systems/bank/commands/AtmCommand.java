@@ -2,6 +2,7 @@ package de.zombyxl.slabcityrp.systems.bank.commands;
 
 import de.zombyxl.slabcityrp.Main;
 import de.zombyxl.slabcityrp.MainZ;
+import de.zombyxl.slabcityrp.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,7 +18,7 @@ public class AtmCommand implements CommandExecutor {
         if (commandSender instanceof Player) {
             Player player = (Player) commandSender;
             if (player.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals("§6§lKontokarte")){
-                player.openInventory(MainZ.atm);
+                player.openInventory(Utils.atm);
             }else{
                 player.sendMessage(Main.prefix+"§cDu musst deine Kontokarte in der Hand halten!");
             }
@@ -25,6 +26,8 @@ public class AtmCommand implements CommandExecutor {
         } else {
             commandSender.sendMessage(Main.onlyplayer);
         }
+
+
 
 
         return false;
