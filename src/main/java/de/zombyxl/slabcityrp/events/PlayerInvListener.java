@@ -71,6 +71,8 @@ public class PlayerInvListener implements Listener {
 
 
         ItemStack ausweis = new ItemBuilder(Material.PAPER).setName("§6§lPersonalausweis").addLoreLine("Name: "+Main.user.get(player.getUniqueId()+".vorname")+" "+Main.user.get(player.getUniqueId()+".nachname")).addLoreLine("Geb.: "+Main.user.get(player.getUniqueId()+".datum")).setEnchantment(Enchantment.UNBREAKING).build();
+        ItemStack bankkarte = new ItemBuilder(Material.PAPER).setName("§6§lKontokarte").addLoreLine("Iban: "+Main.user.get(player.getUniqueId()+".iban")).setEnchantment(Enchantment.UNBREAKING).build();
+
 
         inventory.setItem(9, grayGlass);
         inventory.setItem(10, grayGlass);
@@ -91,7 +93,12 @@ public class PlayerInvListener implements Listener {
             inventory.setItem(22, ausweis);
         }
         inventory.setItem(23, grayGlass);
-        inventory.setItem(24, grayGlass); //Slot 4
+
+        if (Main.user.get(player.getUniqueId()+".ausweis") == null){
+            inventory.setItem(24, grayGlass);
+        }else{
+            inventory.setItem(24, bankkarte);
+        }
         inventory.setItem(25, grayGlass);
         inventory.setItem(26, grayGlass); //Slot 5
         inventory.setItem(27, grayGlass);

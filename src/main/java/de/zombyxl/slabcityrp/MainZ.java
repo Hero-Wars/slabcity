@@ -1,5 +1,6 @@
 package de.zombyxl.slabcityrp;
 
+import de.zombyxl.slabcityrp.events.BankManagerListener;
 import de.zombyxl.slabcityrp.events.PlayerInvListener;
 import de.zombyxl.slabcityrp.systems.bank.commands.AtmCommand;
 import de.zombyxl.slabcityrp.systems.bank.commands.MoneyCommand;
@@ -29,6 +30,7 @@ public class MainZ {
         plugin.getCommand("atm").setExecutor(new AtmCommand(plugin));
 
         Bukkit.getPluginManager().registerEvents(new PlayerInvListener(plugin), plugin);
+        Bukkit.getPluginManager().registerEvents(new BankManagerListener(), plugin);
 
     }
 

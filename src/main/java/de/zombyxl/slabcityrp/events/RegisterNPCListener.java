@@ -74,13 +74,13 @@ public class  RegisterNPCListener implements Listener {
             datumvar = message;
             Main.user.set(player.getUniqueId() + ".datum", datumvar);
             Main.user.set(player.getUniqueId() + ".register", "true");
-            Main.user.set(player.getUniqueId() + ".money", 5000);
+            Main.user.set(player.getUniqueId() + ".money", 2500);
             Main.user.set(player.getUniqueId() + ".job", "Arbeitslos");
             Main.user.set(player.getUniqueId() + ".ausweis", "true");
             Main.user.save();
             ItemStack ausweis = new ItemBuilder(Material.PAPER).setName("§6§lPersonalausweis").addLoreLine("Name: "+Main.user.get(player.getUniqueId()+".vorname")+" "+Main.user.get(player.getUniqueId()+".nachname")).addLoreLine("Geb.: "+Main.user.get(player.getUniqueId()+".datum")).setEnchantment(Enchantment.UNBREAKING).build();
             player.getInventory().setItem(22, ausweis);
-            player.sendMessage(Main.prefix + "§7Du hast deinen Personalausweis erhalten und 5000$ Bargeld!");
+            player.sendMessage(Main.prefix + "§7Du hast deinen Personalausweis erhalten und 2500$ Bargeld!");
         }
     }
 

@@ -7,6 +7,7 @@ de\zombyxl\slabcityrp\utils\NPCManager.class
 de\zombyxl\slabcityrp\utils\Utils.class
 de\zombyxl\slabcityrp\events\PlayerInvListener.class
 de\zombyxl\slabcityrp\utils\ChatClickBuilder.class
+de\zombyxl\slabcityrp\events\BankManagerListener.class
 de\zombyxl\slabcityrp\systems\bank\commands\AtmCommand.class
 de\zombyxl\slabcityrp\Main.class
 de\zombyxl\slabcityrp\events\RegisterEvent.class

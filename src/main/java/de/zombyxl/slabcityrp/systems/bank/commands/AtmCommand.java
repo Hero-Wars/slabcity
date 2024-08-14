@@ -17,10 +17,10 @@ public class AtmCommand implements CommandExecutor {
 
         if (commandSender instanceof Player) {
             Player player = (Player) commandSender;
-            if (player.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals("§6§lKontokarte")){
+            if (Main.user.get(player.getUniqueId()+".iban")!=null){
                 player.openInventory(Utils.atm);
             }else{
-                player.sendMessage(Main.prefix+"§cDu musst deine Kontokarte in der Hand halten!");
+                player.sendMessage(Main.prefix+"§cDu hast keine Kontokarte!\nGehe zu einer Bank und hole dir eine Karte.");
             }
 
         } else {
