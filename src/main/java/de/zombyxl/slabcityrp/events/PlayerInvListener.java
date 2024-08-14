@@ -2,6 +2,7 @@ package de.zombyxl.slabcityrp.events;
 
 import de.zombyxl.slabcityrp.Main;
 import de.zombyxl.slabcityrp.utils.ItemBuilder;
+import de.zombyxl.slabcityrp.utils.Utils;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -36,6 +37,21 @@ public class PlayerInvListener implements Listener {
         if ((event.getCurrentItem() != null && event.getCurrentItem().getType() == Material.GRAY_STAINED_GLASS_PANE) ||
                 (event.getCurrentItem() != null && event.getCurrentItem().getType() == Material.PAPER)) {
             event.setCancelled(true);
+        } else if (event.getCurrentItem() != null && event.getCurrentItem().getType() == Material.GOLD_INGOT &&
+                event.getCurrentItem().getItemMeta().getDisplayName().equals("§6§lZum ATM")) {
+            event.setCancelled(true);
+            event.getWhoClicked().closeInventory();
+            event.getWhoClicked().openInventory(Utils.atm);
+        } else if (event.getCurrentItem() != null && event.getCurrentItem().getType() == Material.NETHER_STAR &&
+                event.getCurrentItem().getItemMeta().getDisplayName().equals("§6§lBank Service")) {
+            event.setCancelled(true);
+            event.getWhoClicked().closeInventory();
+            event.getWhoClicked().openInventory(Utils.bankservice);
+        } else if (event.getCurrentItem() != null && event.getCurrentItem().getType() == Material.DIAMOND &&
+                event.getCurrentItem().getItemMeta().getDisplayName().equals("§6§lÜberfallen")) {
+            event.setCancelled(true);
+            event.getWhoClicked().closeInventory();
+            event.getWhoClicked().sendMessage(Main.prefix + "§cBank überfall System(soon)");
         }
     }
 
@@ -94,7 +110,7 @@ public class PlayerInvListener implements Listener {
         }
         inventory.setItem(23, grayGlass);
 
-        if (Main.user.get(player.getUniqueId()+".ausweis") == null){
+        if (Main.user.get(player.getUniqueId()+".iban") == null){
             inventory.setItem(24, grayGlass);
         }else{
             inventory.setItem(24, bankkarte);
