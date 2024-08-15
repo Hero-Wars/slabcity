@@ -22,6 +22,7 @@ public final class Main extends JavaPlugin {
     public static String noperm = prefix + "§cDazu hast du keine Rechte!";
     public static String onlyplayer = prefix + "§cNur Spieler können diesen Befehl ausführen!";
     public static ConfigurationBuilder user = new ConfigurationBuilder("plugins/SlabCityRP", "user");
+    public static ConfigurationBuilder housing = new ConfigurationBuilder("plugins/SlabCityRP", "housing");
 
     private static Plugin plugin;
 
@@ -37,6 +38,11 @@ public final class Main extends JavaPlugin {
         if (user.loadDefault()){
             user.set("user", "test");
             user.save();
+        }
+
+        if (housing.loadDefault()){
+            housing.set("housing", "test");
+            housing.save();
         }
 
         Bukkit.getPluginManager().registerEvents(new RegisterEvent(), this);

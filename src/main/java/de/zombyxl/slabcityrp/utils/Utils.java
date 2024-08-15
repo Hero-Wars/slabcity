@@ -17,4 +17,6 @@ public class Utils {
     public static Inventory bankinv = Bukkit.createInventory(null, InventoryType.HOPPER, "§6§lBank");
     public static Inventory bankservice = Bukkit.createInventory(null, InventoryType.HOPPER, "§6§lBank Service");
 
+    public static Inventory buyhome = Bukkit.createInventory(null, InventoryType.HOPPER, "§6§lBuy Home");
+
 }
